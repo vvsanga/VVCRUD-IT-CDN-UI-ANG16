@@ -32,9 +32,20 @@ export class ProfessionalEditComponent implements OnInit {
 
   onSubmit() {
     if (this.formProfessional.valid) {
+      // Extract the form value
+      const formValue = this.formProfessional.value;
+
+      // Check if skillset is a comma-separated string and convert it
+      if (formValue.skillset) {
+        const skillNames = formValue.skillset.split(',').map((name: string) => name.trim());
+        formValue.skillset = skillNames.map((name: any) => ({
+          name: name
+        }));
+      }
+
       if (this.data) {
         this.professionalService
-          .updateProfessional(this.data.id, this.formProfessional.value)
+          .updateProfessional(this.data.id, formValue)
           .subscribe({
             next: (val: any) => {
               alert('Professional details updated successfully!');
@@ -48,4 +59,5 @@ export class ProfessionalEditComponent implements OnInit {
       }
     }
   }
+
 }

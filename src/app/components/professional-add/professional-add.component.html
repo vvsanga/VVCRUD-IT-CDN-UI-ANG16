@@ -6,32 +6,33 @@
         <div class="row">
             <mat-form-field appearance="outline" color="accent">
                 <mat-label>Username:</mat-label>
-                <input matInput type="text" placeholder="i.e Abcd1234" formControlName="username">
+                <input matInput type="text" placeholder="i.e user1234" formControlName="username">
             </mat-form-field>
             <mat-form-field appearance="outline" color="accent">
                 <mat-label>Mail:</mat-label>
-                <input matInput type="email" placeholder="i.e david@gmail.com" formControlName="mail">
+                <input matInput type="email" placeholder="i.e user1234@email.com" formControlName="mail">
             </mat-form-field>
         </div>
         <div class="row">
             <mat-form-field appearance="outline" color="accent">
                 <mat-label>Phone Number:</mat-label>
-                <input matInput type="text" placeholder="i.e Abcd1234" formControlName="phoneNumber">
+                <input matInput type="text" placeholder="i.e 60-123-456789" formControlName="phoneNumber">
             </mat-form-field>
             <mat-form-field appearance="outline" color="accent">
                 <mat-label>Hobby:</mat-label>
-                <input matInput type="text" placeholder="i.e Abcd1234" formControlName="hobby">
+                <input matInput type="text" placeholder="i.e Techie Bee" formControlName="hobby">
             </mat-form-field>
         </div>
         <div class="row">
             <mat-form-field appearance="outline" color="accent">
                 <mat-label>skillset:</mat-label>
-                <input matInput type="text" placeholder="i.e Abcd1234" formControlName="skillset">
+                <input matInput type="text" placeholder="i.e JAVA, DOTNET" formControlName="skillset">
             </mat-form-field>
         </div>
     </div>
     <div mat-dialog-actions class="action-btns">
-        <button style="margin: 10px;" mat-raised-button color="accent" type="submit">{{data ? 'Update': 'Save'}}</button>
+        <button style="margin: 10px;" mat-raised-button color="accent" type="submit">{{data ? 'Update':
+            'Save'}}</button>
         <button mat-raised-button type="button" color="warn" [mat-dialog-close]="false">Cancel</button>
     </div>
 </form>

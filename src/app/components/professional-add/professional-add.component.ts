@@ -33,7 +33,18 @@ export class ProfessionalAddComponent implements OnInit {
 
   onSubmit() {
     if (this.formProfessional.valid) {
-      this.professionalService.addProfessional(this.formProfessional.value).subscribe({
+      // Extract the form value
+      const formValue = this.formProfessional.value;
+
+      // Check if skillset is a comma-separated string and convert it
+      if (formValue.skillset) {
+        const skillNames = formValue.skillset.split(',').map((name: string) => name.trim());
+        formValue.skillset = skillNames.map((name: any) => ({
+          name: name
+        }));
+      }
+
+      this.professionalService.addProfessional(formValue).subscribe({
         next: (val: any) => {
           alert('Professional added successfully!');
           this.formProfessional.reset();

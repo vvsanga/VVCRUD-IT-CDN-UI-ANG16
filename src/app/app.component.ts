@@ -61,10 +61,16 @@ export class AppComponent implements OnInit {
   getProfessionalList(pageNo: number, pageSize: number) {
     this.professionalService.getProfessionalList(pageNo, pageSize).subscribe({
       next: (res) => {
-        this.dataSource = new MatTableDataSource(res);
+        // Transform the data to only include the name field from the skillset
+        const transformedData = res.map((professional: any) => ({
+          ...professional,
+          skillset: professional.skillset.map((skill: any) => skill.name).join(', ')
+        }));
+
+        this.dataSource = new MatTableDataSource(transformedData);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
-        console.log(res);
+        console.log(transformedData);
       },
       error: (err) => {
         console.log(err);
