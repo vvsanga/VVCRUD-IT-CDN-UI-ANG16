@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class ProfessionalService {
 
-  baseUrl: string = "https://localhost:7265/api/professional";
+  //baseUrl: string = "https://localhost:7265/api/professional";
+  baseUrl: string = "https://www.vvcruditcdnapi.somee.com/api/Professional"
 
   constructor(private httpClient: HttpClient) { }
 
@@ -20,10 +21,10 @@ export class ProfessionalService {
   }
 
   updateProfessional(id: number, data: any): Observable<any> {
-    return this.httpClient.put(this.baseUrl + `${id}`, data);
+    return this.httpClient.put(this.baseUrl + `/${id}`, data);
   }
 
   deleteProfessional(id: number): Observable<any> {
-    return this.httpClient.delete(this.baseUrl + `${id}`);
+    return this.httpClient.delete(this.baseUrl + `/${id}`);
   }
 }

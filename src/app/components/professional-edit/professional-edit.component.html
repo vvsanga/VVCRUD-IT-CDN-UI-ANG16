@@ -4,27 +4,23 @@
 <form [formGroup]="formProfessional" (ngSubmit)="onSubmit()">
     <div mat-dialog-content class="content">
         <div class="row">
-            <mat-form-field appearance="outline">
-                <mat-label>Username:</mat-label>
-                <input matInput type="text" placeholder="i.e Abcd1234" formControlName="username">
-            </mat-form-field>
-            <mat-form-field appearance="outline">
+            <mat-form-field appearance="outline" color="accent">
                 <mat-label>Mail:</mat-label>
                 <input matInput type="email" placeholder="i.e david@gmail.com" formControlName="mail">
             </mat-form-field>
-        </div>
-        <div class="row">
-            <mat-form-field appearance="outline">
+            <mat-form-field appearance="outline" color="accent">
                 <mat-label>Phone Number:</mat-label>
                 <input matInput type="text" placeholder="i.e Abcd1234" formControlName="phoneNumber">
             </mat-form-field>
-            <mat-form-field appearance="outline">
+        </div>
+        <div class="row">            
+            <mat-form-field appearance="outline" color="accent">
                 <mat-label>Hobby:</mat-label>
                 <input matInput type="text" placeholder="i.e Abcd1234" formControlName="hobby">
             </mat-form-field>
         </div>
         <div class="row">
-            <mat-form-field appearance="outline">
+            <mat-form-field appearance="outline" color="accent">
                 <mat-label>skillset:</mat-label>
                 <input matInput type="text" placeholder="i.e Abcd1234" formControlName="skillset">
             </mat-form-field>

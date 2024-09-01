@@ -37,7 +37,7 @@ export class ProfessionalEditComponent implements OnInit {
           .updateProfessional(this.data.id, this.formProfessional.value)
           .subscribe({
             next: (val: any) => {
-              alert('Professional details updated!');
+              alert('Professional details updated successfully!');
               this.dialogRef.close(true);
             },
             error: (err: any) => {

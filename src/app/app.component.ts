@@ -16,7 +16,8 @@ import { ProfessionalEditComponent } from './components/professional-edit/profes
 export class AppComponent implements OnInit {
 
   pageNo: number = 1;
-  pageSize: number = 5;
+  pageSize: number = 20;
+  pageSizes = [3, 5, 7];
 
   // the columns that will be displayed in the professional details table
   displayedColumns: string[] = [
@@ -26,7 +27,8 @@ export class AppComponent implements OnInit {
     'phoneNumber',
     'skillset',
     'hobby',
-    'createDateTime'
+    'createDateTime',
+    'action'
   ];
 
   // professional list will be assigned to this and it is passed as the data source to the mat-table in the HTML template 
@@ -84,7 +86,7 @@ export class AppComponent implements OnInit {
     if (confirm) {
       this.professionalService.deleteProfessional(id).subscribe({
         next: (res) => {
-          alert('Professional deleted!');
+          alert('Professional deleted successfully!');
           this.getProfessionalList(this.pageNo, this.pageSize);
         },
         error: (err) => {
